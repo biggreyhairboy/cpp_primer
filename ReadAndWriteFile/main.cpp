@@ -10,7 +10,7 @@ int main()
 	//if (cin){
 	//	cout << "cin is ok";
 	//}
-	ifstream infile("C:\\Cpp_Projects\\cpp_primer_practises\\Debug\\abc.txt");
+	ifstream infile("abc.txt");
 	string str;
 	char AChar;
 	//infile.clear();
