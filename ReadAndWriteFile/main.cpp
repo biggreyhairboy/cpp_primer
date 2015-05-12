@@ -1,6 +1,7 @@
 #include <iostream>
 #include <fstream>
 #include <vector>
+#include <string>
 
 using namespace std;
 
@@ -10,21 +11,27 @@ int main()
 	//if (cin){
 	//	cout << "cin is ok";
 	//}
-	ifstream infile("abc.txt");
+	ifstream infile("C:\\Cpp_Projects\\cpp_primer_practises\\ReadAndWriteFile\\abc.txt");
 	string str;
 	char AChar;
 	//infile.clear();
 	//infile.open("C:\Cpp_Projects\cpp_primer_practises\Debug\abc.txt", ios::in | ios::out);
 	//
+	infile.ignore();
 	if (!infile){
 		cout << "error when openning file!" << endl;
 	}
-	cout << infile.get() << endl;
-	while (((AChar = infile.get()) != EOF)){
-		cout << AChar;
-		
+	//cout << infile.get() << endl;
+	while (getline(infile, str)){
+
 	}
+	cout << str;
+	//while (((AChar = infile.get()) != EOF)){
+	//	cout << AChar;
+	//	
+	//}
 	
+
 	getchar();
 
 }

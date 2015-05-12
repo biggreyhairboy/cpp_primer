@@ -9,6 +9,8 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "ReadAndWriteFile", "ReadAnd
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "XMLLearning", "XMLLearning\XMLLearning.vcxproj", "{0BEFB6BD-EC42-4F17-9E16-C380A0D64A46}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "DatabaseConnetion", "DatabaseConnetion\DatabaseConnetion.vcxproj", "{98CCF2E7-3815-4476-8E76-F06B608E710C}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Win32 = Debug|Win32
@@ -27,6 +29,10 @@ Global
 		{0BEFB6BD-EC42-4F17-9E16-C380A0D64A46}.Debug|Win32.Build.0 = Debug|Win32
 		{0BEFB6BD-EC42-4F17-9E16-C380A0D64A46}.Release|Win32.ActiveCfg = Release|Win32
 		{0BEFB6BD-EC42-4F17-9E16-C380A0D64A46}.Release|Win32.Build.0 = Release|Win32
+		{98CCF2E7-3815-4476-8E76-F06B608E710C}.Debug|Win32.ActiveCfg = Debug|Win32
+		{98CCF2E7-3815-4476-8E76-F06B608E710C}.Debug|Win32.Build.0 = Debug|Win32
+		{98CCF2E7-3815-4476-8E76-F06B608E710C}.Release|Win32.ActiveCfg = Release|Win32
+		{98CCF2E7-3815-4476-8E76-F06B608E710C}.Release|Win32.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
