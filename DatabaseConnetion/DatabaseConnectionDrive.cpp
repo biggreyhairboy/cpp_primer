@@ -1,8 +1,15 @@
+
+//#include <stdio.h>
 #include <iostream>
-#import "E:\Program Files\Common Files\System\ado\msado15.dll"
+//#include "stdafx.h"
+//#include "Windows.h"
+//#include <icrsint.h>
+#import "E:\Program Files\Common Files\System\ado\msado15.dll"  rename("EOF","adoEOF")
 using namespace std;
 
 int main()
 {
-	cout << "hi" << endl;
+	_ConnectionPtr
+
+	getchar();
 }
