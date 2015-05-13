@@ -13,13 +13,16 @@ using namespace ADODB;
 
 int main()
 {
+	if (FAILED(CoInitialize(NULL)))  //初始化COM环境
+		return 0;
+	
 	_ConnectionPtr myConnect = NULL;
-	CoInitialize(NULL);
+
 	HRESULT hr = myConnect.CreateInstance(__uuidof(Connection));
 	if (FAILED(hr)) 
 		return 0;
 
-	_bstr_t strConnect = "Provider=SQLOLEDB; Server=THINKPAD_T420\\SQLEXPRESS; Database=omsdata_maxrich_3; uid=ebs; pwd=ebroker;";
+	_bstr_t strConnect = "Provider=SQLOLEDB; Server=THINKPAD_T420\\SQLEXPRESS; Database=omsdata_pro;Trusted_Connection = yes;  Integrated Security = SSPI";//THINKPAD_T420\\SQLEXPRESS
 	try{
 		myConnect->Open(strConnect, "", "", NULL);
 	}
@@ -30,18 +33,19 @@ int main()
 	_RecordsetPtr myRecordSet;
 	if (FAILED(myRecordSet.CreateInstance(__uuidof(Recordset)))) 
 		return 0;
-	try{
-		myRecordSet->Open(_variant_t("userinfo"), _variant_t((IDispatch*)myConnect), adOpenKeyset, adLockOptimistic, adCmdTable);
-	}
-	catch (_com_error &e){
-		//cout << "RecordSetError " << e.Description;
-	}
+	//try{
+	//	myRecordSet->Open(_variant_t("userinfo"), _variant_t((IDispatch*)myConnect), adOpenKeyset, adLockOptimistic, adCmdTable);
+	//}
+	//catch (_com_error &e){
+	//	//cout << "RecordSetError " << e.Description;
+	//}
 
-	myConnect.CreateInstance(__uuidof(Connection));
-	myRecordSet.CreateInstance(__uuidof(Recordset));
+	//myConnect.CreateInstance(__uuidof(Connection));
+	//myRecordSet.CreateInstance(__uuidof(Recordset));
 
-	_bstr_t strSQL = "select * from user_file";
-	myRecordSet = myConnect->Executee(strSQL, NULL, adCmdText);
+	CString strSQL = "select * from user_file";
+	//_bstr_t strSQL = "select * from user_file";
+	myRecordSet = myConnect->Execute(_bstr_t(strSQL), NULL, adCmdText);
 
 	while (!myRecordSet->adoEOF){
 		CString temp =(TCHAR *)(_bstr_t)myRecordSet->GetFields()->GetItem("User_No")->Value;
